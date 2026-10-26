@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="author" content="Andrea Che">
+
+  <title>Bear Ninja Hunter</title>
+</head>
+
+<body>
+
+  <p id="demo"></p>
+
+  <script type="text/javascript">
+
+    //Introduce player to the game
+    let playerName = prompt('Welcome to Bear Hunter Ninja! Please enter your name to get started:');
+    //Add a personalized message
+    alert(`Hi ${playerName} Let\'s Play!!`);
+    //Ask player to choose Bear, Ninja, or Hunter
+    let playerChoice = prompt("Who are you: Bear, Ninja, or Hunter?");
+    //Set computer choice to Bear
+    const computerChoice = "Bear";
+    let gameOutcome;
+    //Determine what the game outcome is based on player and computers choice
+    if (playerChoice === computerChoice) {
+      gameOutcome = "Tie";
+     } else if(playerChoice === "Bear" && computerChoice === "Ninja")  { 
+        gameOutcome = "You Win!!";
+      } else if(playerChoice === "Ninja" && computerChoice === "Hunter") {
+        gameOutcome = "You Win!!";
+      } else if(playerChoice === "Hunter" && computerChoice === "Bear") {
+        gameOutcome = "You Win!!";
+      } else {
+        gameOutcome = "You Lose!!";
+    }
+    //Use a switch to assign the right result message
+      let messageResult;
+
+      switch (gameOutcome) {
+       case "You Win!!":
+       messageResult = "You Win!!";
+       break; 
+
+       case "Tie":
+       messageResult = "It's a Tie.";
+       break;
+
+       case "You Lose!!":
+       messageResult = "You Lose!!";
+       break;
+
+       default:
+        messageResult = "No game outcome";
+      }
+      
+
+    //Html message
+    let htmlMessage =`${playerName} you chose ${playerChoice}!<br><br>The computer chose ${computerChoice}!<br><br>${messageResult}`;
+    //Display game message in console
+    console.log(`${playerName} you chose ${playerChoice}!`);
+    console.log(`The computer chose ${computerChoice}!`);
+    console.log(messageResult);
+       
+    //Display game message on webpage
+    document.getElementById("demo").innerHTML = htmlMessage;
+  </script>
+</body>
+
+</html>
